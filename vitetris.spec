@@ -6,7 +6,7 @@ Version:	0.51
 Release:	0.1
 License:	BSD-like
 Group:		Applications/Games
-Source0:	%{name}-%{version}.tar.gz
+Source0:	http://victornils.net/tetris/%{name}-%{version}.tar.gz
 # Source0-md5:	7674b536021139c100600ddb992fe2dc
 URL:		http://victornils.net/tetris/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
