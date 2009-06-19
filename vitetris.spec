@@ -1,13 +1,14 @@
-#
 Summary:	Console based tetris clone
 Summary(pl.UTF-8):	Tetris w konsoli tekstowej
 Name:		vitetris
-Version:	0.55
+Version:	0.56
 Release:	0.1
 License:	BSD-like
 Group:		Applications/Games
 Source0:	http://victornils.net/tetris/%{name}-%{version}.tar.gz
-# Source0-md5:	d6f215d760a4aa8a76f5ead1c80f3f37
+# Source0-md5:	fc66ca3f90a95e9b270d68720dfe83ea
+Patch0:		%{name}-Makefile.patch
+Patch1:		%{name}-desktop.patch
 URL:		http://victornils.net/tetris/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -27,18 +28,25 @@ przypomina wczesne gry typu Tetirs na Nintendo.
 
 %prep
 %setup -q
+%patch0 -p1
+%patch1 -p1
 
 %build
-./configure
+./configure \
+	--prefix="%{_prefix}"
 %{__make} \
+	CC="%{__cc}" \
 	CFLAGS="%{rpmcflags}" \
 	LDFLAGS="%{rpmldflags}"
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
-install -d $RPM_BUILD_ROOT{%{_bindir},/var/games}
-install tetris $RPM_BUILD_ROOT%{_bindir}/vitetris
+%{__make} install \
+	DESTDIR=$RPM_BUILD_ROOT
+
+# install hiscores
+install -d $RPM_BUILD_ROOT/var/games
 touch $RPM_BUILD_ROOT/var/games/vitetris-hiscores
 
 %clean
@@ -46,6 +54,8 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
+%doc README changes.txt licence.txt
 %attr(755,root,root) %{_bindir}/vitetris
 %attr(660,root,games) %config(noreplace) %verify(not md5 mtime size) /var/games/vitetris-hiscores
-%doc changes.txt README licence.txt
+%{_desktopdir}/%{name}.desktop
+%{_pixmapsdir}/%{name}.xpm
