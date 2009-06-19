@@ -16,6 +16,7 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 vitetris is a terminal-based Tetris clone. Gameplay is much like the
 early Tetris games by Nintendo.
 
+Features:
 - Configurable keys
 - Highscore table
 - Two-player mode with garbage
@@ -25,6 +26,13 @@ early Tetris games by Nintendo.
 %description -l pl.UTF-8
 vitetris jest konsolowym klonem klasycznej gry Tetris. Styl gry
 przypomina wczesne gry typu Tetirs na Nintendo.
+
+Funkcje
+- Możliwość zmiany ustawienia klawiszy
+- Tabela wyników
+- Możliwość rozgrywki dla dwóch graczy
+- Możliwość gry przez sieć
+- Możliwość podłączenia joysticka
 
 %prep
 %setup -q
