@@ -1,0 +1,4 @@
+- 0.56
+- desktop added
+- pass CC flags too
+- new build workaround (make install)
