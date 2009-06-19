@@ -1,0 +1,15 @@
+--- vitetris-0.56/vitetris.desktop~	2009-06-19 10:02:04.000000000 +0200
++++ vitetris-0.56/vitetris.desktop	2009-06-19 10:02:00.000000000 +0200
+@@ -1,9 +1,10 @@
+ [Desktop Entry]
+ Type=Application
+-Encoding=UTF-8
+ Name=vitetris
+ GenericName=Text-mode Tetris
+-Exec=tetris -w 80
++GenericName[pl]=Tetris w konsoli tekstowej
++Exec=vitetris
+ Icon=vitetris
+ Categories=Game;BlocksGame;
+ Terminal=true
++# vi: encoding=utf-8

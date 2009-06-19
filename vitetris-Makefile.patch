@@ -1,0 +1,40 @@
+--- vitetris-0.56/Makefile~	2009-06-19 09:48:09.000000000 +0200
++++ vitetris-0.56/Makefile	2009-06-19 09:48:04.000000000 +0200
+@@ -1,11 +1,11 @@
+ include config.mk
+ 
+-PROGNAME = tetris$(EXE)
++PROGNAME = vitetris$(EXE)
+ 
+ # Uncomment to change the default.  (Only used in Unix-like systems.)
+ #HISCORE_FILENAME = /var/games/vitetris-hiscores
+ 
+-INSTALL = install -oroot -groot
++INSTALL = install
+ 
+ default: build
+ 	@echo Done.
+@@ -54,18 +54,17 @@
+ 	./src-conf.sh obj pctimer $(PCTIMER)
+ 
+ install: $(PROGNAME)
+-	$(INSTALL) -d $(DESTDIR)$(bindir) $(DESTDIR)$(docdir)
+-	$(INSTALL) -m755 $(PROGNAME) $(DESTDIR)$(bindir)
+-	$(INSTALL) -m644 README licence.txt $(DESTDIR)$(docdir)
++	$(INSTALL) -d $(DESTDIR)$(bindir)
++	$(INSTALL) $(PROGNAME) $(DESTDIR)$(bindir)
+ 	if [ -n "$(pixmapdir)" ]; then \
+   $(INSTALL) -d $(DESTDIR)$(pixmapdir) && \
+-  $(INSTALL) -m644 vitetris.xpm $(DESTDIR)$(pixmapdir); fi
++  $(INSTALL) vitetris.xpm $(DESTDIR)$(pixmapdir); fi
+ 	if [ -n "$(desktopdir)" ]; then \
+   $(INSTALL) -d $(DESTDIR)$(desktopdir) && \
+-  $(INSTALL) -m644 vitetris.desktop $(DESTDIR)$(desktopdir); fi
++  $(INSTALL) vitetris.desktop $(DESTDIR)$(desktopdir); fi
+ 	if [ -n "$(ALLEGRO)" ]; then \
+   $(INSTALL) -d $(DESTDIR)$(datadir) && \
+-  $(INSTALL) -m644 pc8x16.fnt $(DESTDIR)$(datadir); fi
++  $(INSTALL) pc8x16.fnt $(DESTDIR)$(datadir); fi
+ 	@echo Done.
+ 	@echo You may also wish to create the system-wide highscore file
+ 	@echo 'with "make install-hiscores"'.
