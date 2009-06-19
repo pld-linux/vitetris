@@ -1,8 +1,11 @@
+#
+# TODO: supprot for allegro?
+#
 Summary:	Console based tetris clone
 Summary(pl.UTF-8):	Tetris w konsoli tekstowej
 Name:		vitetris
 Version:	0.56
-Release:	0.1
+Release:	1
 License:	BSD-like
 Group:		Applications/Games
 Source0:	http://victornils.net/tetris/%{name}-%{version}.tar.gz
