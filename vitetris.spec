@@ -4,12 +4,12 @@
 Summary:	Console based tetris clone
 Summary(pl.UTF-8):	Tetris w konsoli tekstowej
 Name:		vitetris
-Version:	0.56
+Version:	0.57
 Release:	1
 License:	BSD-like
 Group:		Applications/Games
 Source0:	http://victornils.net/tetris/%{name}-%{version}.tar.gz
-# Source0-md5:	fc66ca3f90a95e9b270d68720dfe83ea
+# Source0-md5:	07d02ee03e2edd66a8741729e237f21f
 Patch0:		%{name}-Makefile.patch
 Patch1:		%{name}-desktop.patch
 URL:		http://victornils.net/tetris/
